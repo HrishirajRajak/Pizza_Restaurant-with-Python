@@ -1,16 +1,22 @@
+import Pizza_order
+
+
 if __name__  == "__main__":
+   start = Pizza_order.PizzaOrder()
+   start.greeting()
    while True:
-       print("Welcome to the pizza!")
-       user_input = input("Would you like to have a  pizza ? : ")
+        start.input_order()
+        user_input = input(":")
+        if user_input == "1":
+            start.menu()
+            start.add_to_order()
 
-       if user_input == "yes":
-           print("\n\nSure, I would gladly take your order than. \nWhich pizza would you like? \n1. Menu  \n2. Total Bill 3. Exit")
-           continue
+        if user_input == "2":
+            start.show_bill()
+        elif user_input.lower() == "exit" or user_input.lower() == "quit" or user_input.lower() == "3":
+            quit()
+        else:
+            continue
+        
+        
 
-       match user_input.lower():
-           case ("yes"):
-                print("\n\nSure, I would gadly take your order than. \nWhich pizza would you like? \n1. Menu  \n2. Total Bill 3. Exit")
-                continue
-           case "exit":
-                print("Thank you for your time. \nGoodbye!")
-                break
